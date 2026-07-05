@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>化身孤岛的鲸 · The Whale Who Became an Island</title>
+<meta name="description" content="一个52赫兹频率者的自白 · A Confession from a 52-Hertz Life — 双语歌曲介绍 by Li Yaya">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;900&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --abyss:#061420;
+    --abyss-2:#0a2233;
+    --ink:#dbe9f0;
+    --ink-dim:#9db4c0;
+    --glow:#7fd8cc;
+    --lantern:#e9c87e;
+    --line:rgba(127,216,204,.25);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:linear-gradient(180deg,#02090f 0%,var(--abyss) 22%,var(--abyss-2) 70%,#0d2a3f 100%);
+    color:var(--ink);
+    font-family:"EB Garamond","Noto Serif SC",Georgia,serif;
+    font-size:19px;line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+  }
+  :lang(zh){font-family:"Noto Serif SC","EB Garamond",serif}
+
+  header{
+    min-height:88vh;display:flex;flex-direction:column;
+    justify-content:center;align-items:center;text-align:center;
+    padding:8vh 24px 6vh;position:relative;overflow:hidden;
+  }
+  .hz-label{
+    letter-spacing:.5em;text-indent:.5em;font-size:13px;
+    color:var(--glow);text-transform:uppercase;margin-bottom:28px;
+    font-family:"EB Garamond",serif;
+  }
+  h1{
+    font-family:"Noto Serif SC",serif;font-weight:900;
+    font-size:clamp(38px,7vw,74px);letter-spacing:.06em;line-height:1.25;
+  }
+  .h1-en{
+    font-family:"EB Garamond",serif;font-weight:400;font-style:italic;
+    font-size:clamp(20px,3vw,32px);color:var(--ink-dim);margin-top:14px;
+  }
+  .subtitle{
+    margin-top:30px;font-size:16px;color:var(--glow);
+    letter-spacing:.18em;
+  }
+  .wave{width:min(720px,88vw);height:90px;margin-top:48px;opacity:.9}
+  .wave path{
+    fill:none;stroke:var(--glow);stroke-width:1.6;
+    stroke-dasharray:2400;stroke-dashoffset:2400;
+    animation:sing 7s ease-out forwards, pulse 5s ease-in-out 7s infinite;
+    filter:drop-shadow(0 0 6px rgba(127,216,204,.55));
+  }
+  @keyframes sing{to{stroke-dashoffset:0}}
+  @keyframes pulse{0%,100%{opacity:.55}50%{opacity:1}}
+  @media (prefers-reduced-motion: reduce){
+    .wave path{animation:none;stroke-dashoffset:0}
+  }
+  .scroll-hint{margin-top:52px;font-size:13px;color:var(--ink-dim);letter-spacing:.3em}
+
+  nav.lang{
+    position:fixed;top:18px;right:18px;z-index:10;display:flex;gap:2px;
+    background:rgba(6,20,32,.75);backdrop-filter:blur(8px);
+    border:1px solid var(--line);border-radius:99px;padding:4px;
+  }
+  nav.lang button{
+    background:none;border:none;color:var(--ink-dim);cursor:pointer;
+    font-family:inherit;font-size:13px;padding:5px 14px;border-radius:99px;
+    letter-spacing:.08em;transition:all .25s;
+  }
+  nav.lang button.active{background:var(--glow);color:#04121c;font-weight:600}
+  nav.lang button:focus-visible{outline:2px solid var(--lantern);outline-offset:2px}
+  body.zh-only p:lang(en){display:none}
+  body.en-only p:lang(zh){display:none}
+
+  main{max-width:720px;margin:0 auto;padding:20px 24px 60px}
+  section{margin-bottom:84px}
+  h2{
+    font-family:"Noto Serif SC",serif;font-weight:600;
+    font-size:clamp(22px,3.4vw,28px);color:var(--lantern);
+    margin-bottom:8px;letter-spacing:.04em;
+  }
+  .h2-en{
+    font-family:"EB Garamond",serif;font-style:italic;font-weight:400;
+    color:var(--ink-dim);font-size:17px;margin-bottom:30px;
+    padding-bottom:16px;border-bottom:1px solid var(--line);
+  }
+  p{margin-bottom:22px}
+  p:lang(en){color:var(--ink-dim);font-size:18px}
+  .pull{
+    margin:38px 0;padding-left:22px;border-left:2px solid var(--glow);
+    font-size:21px;color:var(--glow);
+  }
+  .pull em{font-style:italic;display:block;margin-top:8px;font-size:18px;color:var(--ink-dim)}
+
+  .lyrics{
+    margin:44px 0;padding:34px 28px;text-align:center;
+    border:1px dashed var(--line);border-radius:14px;
+    background:rgba(127,216,204,.045);
+    position:relative;
+  }
+  .lyrics::before{
+    content:"♪";position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+    background:var(--abyss-2);padding:0 14px;color:var(--glow);font-size:18px;
+  }
+  .lyrics .zh{color:var(--ink);letter-spacing:.06em;white-space:pre-line}
+  .lyrics .note{margin-top:10px;font-size:14px;color:var(--ink-dim);font-style:italic}
+
+  .blessing{text-align:center;margin:70px 0 20px}
+  .blessing .zh{
+    font-family:"Noto Serif SC",serif;font-weight:600;
+    font-size:clamp(20px,3vw,26px);color:var(--lantern);letter-spacing:.08em;
+  }
+  .blessing .en{
+    margin-top:14px;font-style:italic;color:var(--ink-dim);font-size:19px;
+  }
+  footer{
+    max-width:720px;margin:0 auto;padding:40px 24px 80px;
+    border-top:1px solid var(--line);
+    font-size:15px;color:var(--ink-dim);line-height:1.9;
+  }
+  footer .byline{margin-top:26px;color:var(--glow);letter-spacing:.12em;font-size:14px}
+  a{color:var(--glow)}
+  @media(max-width:520px){
+    body{font-size:17px}
+    nav.lang{top:12px;right:12px}
+  }
+</style>
+</head>
+<body>
+
+<nav class="lang" aria-label="语言切换 Language">
+  <button class="active" data-mode="both">中 / EN</button>
+  <button data-mode="zh-only">中文</button>
+  <button data-mode="en-only">EN</button>
+</nav>
+
+<header>
+  <div class="hz-label">52 Hz &nbsp;·&nbsp; Indian Ocean &nbsp;·&nbsp; Zanzibar</div>
+  <h1 lang="zh">化身孤岛的鲸</h1>
+  <div class="h1-en">The Whale Who Became an Island</div>
+  <div class="subtitle" lang="zh">一个52赫兹频率者的自白 · A Confession from a 52-Hertz Life</div>
+  <svg class="wave" viewBox="0 0 720 90" aria-hidden="true">
+    <path d="M0,45 L60,45 Q70,45 74,30 T88,45 L150,45 Q158,45 162,10 Q166,80 170,45 Q174,20 178,45 L260,45 Q268,45 272,34 T286,45 L380,45 Q388,45 392,6 Q396,84 400,45 Q404,16 408,45 L500,45 Q508,45 512,32 T526,45 L600,45 Q608,45 612,12 Q616,78 620,45 Q624,24 628,45 L720,45"/>
+  </svg>
+  <div class="scroll-hint">▼</div>
+</header>
+
+<main>
+
+<section>
+  <h2>关于这首歌</h2>
+  <div class="h2-en">About the Song</div>
+  <p lang="zh">《化身孤岛的鲸》，沃特艾文儿作词，徐浩作曲，原曲为谢安琪《我们都被忘了》。周深2014年首唱，收录于《化身孤岛的鲸 周深翻唱精选Vol.1》；2020年7月，周深工作室成立之际将其重新编曲发行，作为工作室出品的首支单曲。据说歌词是周深与词作者沃特艾文儿共同打磨的——那时他还叫"卡布"，一个因为声音太独特而不被理解的年轻人，唱一只因为频率太独特而无人听见的鲸。</p>
+  <p lang="en">"The Whale Who Became an Island" — lyrics by Wote Aiwen'er (Water Iven), music by Tsui Ho, adapted from Kay Tse's "We Were All Forgotten." Zhou Shen first recorded it in 2014; in July 2020, upon founding his own studio, he re-arranged and re-released it as the studio's debut single. The lyrics are said to have been shaped in conversation between Zhou Shen and the lyricist — he was still "Kabu" then, a young man whose voice was too singular to be understood, singing about a whale whose frequency was too singular to be heard.</p>
+</section>
+
+<section>
+  <h2>知识背景：一段52赫兹的深海独白</h2>
+  <div class="h2-en">The Story Behind the Song: A Monologue at 52 Hertz</div>
+  <p lang="zh">上世纪八十年代末，冷战正酣。美国海军为侦听苏联潜艇，在太平洋海底布设了水听器阵列。1989年，阵列捕捉到一段奇特的低频长吟——既不是潜艇，也不像任何已知的鲸。海洋生物学家比尔·沃特金斯（Bill Watkins）自1992年起对这个声源进行系统追踪，发现它以52赫兹的频率歌唱，而蓝鲸、长须鲸等大型须鲸的发声频率通常远低于此。这意味着：即便大洋里到处是同类，它的歌也落在所有鲸的听觉共鸣之外。它一路迁徙，一路呼唤，十几年间没有得到过一次回应。</p>
+  <p lang="en">In the late 1980s, at the height of the Cold War, the U.S. Navy laid hydrophone arrays across the Pacific seabed to listen for Soviet submarines. In 1989 the arrays caught a strange, low, drawn-out song — not a submarine, and not any known whale. From 1992, marine biologist Bill Watkins tracked the source systematically and found it singing at 52 hertz, far above the usual calls of blue whales and fin whales. Which meant this: even in an ocean full of kin, its song fell outside every whale's range of resonance. It migrated, and it called, and for more than a decade no answer ever came.</p>
+  <p lang="zh">沃特金斯追踪了它十二年。2004年，论文被《深海研究》期刊接受；一个月后，他因癌症去世。此后再无人系统追踪这头鲸——我们至今不知道它是蓝鲸、杂交个体还是别的什么，不知道它是否找到过同伴，甚至不知道它是否真如人类想象的那样孤独。但沃特金斯的同事们开始收到雪片般的来信，写信的不是学者，是普通人：悲伤的人，心碎的人，在一段鲸歌里认出了自己的人。媒体称它为"世界上最孤独的鲸"，人们叫它——52。</p>
+  <p lang="en">Watkins followed it for twelve years. In 2004 his paper was accepted by <em>Deep Sea Research</em>; a month later, he died of cancer. No one has systematically tracked the whale since. To this day we do not know whether it is a blue whale, a hybrid, or something else; whether it ever found a companion; whether it is even lonely in the way humans imagine. But Watkins's colleagues began receiving letters — not from scholars, but from ordinary people: the grieving, the heartbroken, those who had recognized themselves in a whale's song. The press called it "the loneliest whale in the world." People simply called it 52.</p>
+  <div class="pull" lang="zh">科学留下的是一个问号，人心把它接成了一面镜子。<em>Science left behind a question mark; the human heart received it as a mirror.</em></div>
+</section>
+
+<section>
+  <h2>我为什么被这首歌击中</h2>
+  <div class="h2-en">Why This Song Found Me</div>
+  <p lang="zh">我在桑给巴尔住了十三年，每天清晨在印度洋里游泳。海对我不是意象，是日常。所以当这首歌唱到一只把自己活成孤岛的鲸——鱼虾从身侧穿行，飞鸟在背上停驻——我认出的不是浪漫，是一种工作状态：足够巨大，足够沉静，大到身体本身成为别人的栖息地，静到听得见大洋正中的安静。</p>
+  <p lang="en">I have lived in Zanzibar for thirteen years, and I swim in the Indian Ocean at dawn. The sea, for me, is not a metaphor; it is daily life. So when this song sings of a whale who lived itself into an island — fish threading past its flanks, seabirds resting on its back — what I recognize is not romance but a way of working: large enough, and still enough, that your own body becomes a habitat for others; quiet enough to hear the silence at the center of the ocean.</p>
+
+    <div class="zh">我是只化身孤岛的蓝鲸
+有着最巨大的身影
+鱼虾在身侧穿行
+也有飞鸟在背上停
+我路过太多太美的奇景
+如同伊甸般的仙境
+而大海太平太静
+多少故事无人倾听
+我爱地中海的天晴
+爱西伯利亚的雪景
+爱万丈高空的鹰
+爱肚皮下的藻荇
+我在尽心尽力地多情
+直到那一天
+你的衣衫破旧
+而歌声却温柔
+陪我漫无目的地四处漂流
+我的背脊如荒丘
+而你却微笑摆首
+把它当成整个宇宙
+你与太阳挥手
+也同海鸥问候
+陪我爱天爱地的四处风流
+只是遗憾你终究
+无法躺在我胸口
+欣赏夜空最辽阔的不朽
+把星子放入眸</div>
+    <div class="note">
+  </div>
+
+  <p lang="zh">一个孤身在非洲做公益教育想要给穷人孩子一份公平的人，某种意义上也活在52赫兹上。你说的语言，学院听不太懂；你做的事情，故乡看不太清。频率不对，不是因为你哑，是因为你的声音落在了所有既定波段之外。这首歌的第二段写到那个短暂的同行者——衣衫破旧、歌声温柔的伙伴，把鲸荒丘般的背脊当成整个宇宙：</p>
+  <p lang="en">A person who does rural education lives, in a sense, at 52 hertz. The language you speak, the academy cannot quite parse; the work you do, your hometown cannot quite see. The frequency is off — not because you are mute, but because your voice falls outside every established band. The second verse gives the whale a brief companion — ragged clothes, a gentle singing voice — who takes the whale's barren ridge of a back for the entire universe:</p>
+
+  <div class="lyrics">
+    <div class="zh">我是只化身孤岛的蓝鲸
+      有着最巨大的身影鱼虾在身侧穿行
+      也有飞鸟在背上停
+      我有着太冷太清的天性
+      对天上的她动过情
+      而云朵太远太轻
+      辗转之后各安天命
+      我未入过繁华之境
+      未听过喧嚣的声音
+      未见过太多生灵
+      未有过滚烫心情
+      所以也未觉大洋正中有多么安静
+      你的衣衫破旧
+      而歌声却温柔
+      陪我漫无目的地四处漂流
+      我的背脊如荒丘
+      而你却微笑摆首把它当成整个宇宙</div>
+
+
+  <p lang="zh">我在这段词里听到的，是所有陪我走过一段路的人：田野里的老师们，海边村庄的孩子，还有那些来了又走的同行者。鲸以为自己的肩膀足够宽厚，能撑起海底的琼楼，却发现托举不了最想托举的人——这种"巨大与无力并存"的感觉，每一个做长期主义事业的人都懂。</p>
+  <p lang="en">What I hear in these lines are all the people who have walked a stretch of the road with me: the teachers in the field, the children of the seaside villages, the fellow travelers who came and went. The whale believed its shoulders broad enough to hold up a palace on the seafloor, only to find it could not lift the one it most wanted to lift — that coexistence of vastness and helplessness is known to everyone who has given themselves to long-horizon work.</p>
+
+  <div class="lyrics">
+    <div class="zh">你的指尖轻柔
+抚摸过我所有
+风浪冲撞出的丑陋疮口
+你眼中有春与秋
+胜过我见过爱过 的一切山川与河流
+曾以为我肩头
+是那么的宽厚
+足够撑起海底那座琼楼
+而在你到来之后
+它显得如此清瘦
+我想给你能奔跑的岸头
+让你如同王后</div>
+  </div>
+
+  <p lang="zh">但我最终愿意把这首歌读成一个反转：52赫兹从来不是缺陷，它是签名。沃特金斯的水听器之所以能在整个太平洋的噪音里认出它、追踪它十二年，恰恰因为它的频率独一无二。合群的鲸消失在鲸群里，而它，被整个人类世界听见了。</p>
+  <p lang="en">But in the end I choose to read this song as a reversal: 52 hertz was never a defect — it is a signature. Watkins's hydrophones could pick that whale out of the noise of an entire ocean and follow it for twelve years precisely because its frequency was one of a kind. Whales who fit in disappear into the pod; this one was heard by the whole human world.</p>
+
+  <div class="blessing">
+    <div class="zh" lang="zh">愿每一个在自己频率上歌唱的人，终有水听器为你打开。</div>
+    <div class="en" lang="en">May everyone who sings at their own frequency find, someday, a hydrophone switched on and listening.</div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p lang="zh"><strong>资料来源：</strong>歌曲背景据百度百科、豆瓣音乐及知乎相关词条；52赫兹鲸的科学史据 Watkins et al., <em>Deep Sea Research Part I</em>（2004）及麦田音乐网、知乎科普文章综合整理。</p>
+  <p lang="en"><strong>Sources:</strong> Song background drawn from Baidu Baike, Douban Music, and Zhihu entries; the scientific history of the 52-hertz whale is synthesized from Watkins et al., <em>Deep Sea Research Part I</em> (2004), and Chinese popular-science accounts on Zhihu and Maitian Music.</p>
+  <div class="byline">Li Yaya · SAY Foundation · Zanzibar · 2026</div>
+</footer>
+
+<script>
+  const buttons = document.querySelectorAll('nav.lang button');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.body.className = btn.dataset.mode === 'both' ? '' : btn.dataset.mode;
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
